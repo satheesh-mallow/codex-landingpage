@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mallow Technologies | Software Systems for Senior Care Operators</title>
+  <style>
+    :root {
+      --primary: #0B1C2C;
+      --accent: #2EC4B6;
+      --bg-light: #f4f7f9;
+      --text: #17232f;
+      --muted: #5c6874;
+      --border: #d9e1e6;
+      --max-width: 1120px;
+      --radius: 14px;
+      --shadow: 0 8px 24px rgba(11, 28, 44, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      color: var(--text);
+      background: #fff;
+      line-height: 1.6;
+    }
+
+    .container {
+      width: min(var(--max-width), 92%);
+      margin: 0 auto;
+    }
+
+    section {
+      padding: 84px 0;
+      border-bottom: 1px solid #eef2f5;
+    }
+
+    h1, h2, h3 {
+      margin: 0 0 16px;
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+      color: var(--primary);
+    }
+
+    h1 {
+      font-size: clamp(2rem, 4vw, 3.25rem);
+      max-width: 15ch;
+    }
+
+    h2 {
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      max-width: 24ch;
+    }
+
+    p {
+      margin: 0 0 16px;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: rgba(46, 196, 182, 0.12);
+      color: #11685f;
+      font-size: 0.84rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      margin-bottom: 20px;
+    }
+
+    .hero {
+      background: linear-gradient(180deg, #f5faf9 0%, #ffffff 55%);
+      padding-top: 56px;
+    }
+
+    .hero-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 42px;
+    }
+
+    .logo {
+      color: var(--primary);
+      font-weight: 700;
+      font-size: 1.1rem;
+      letter-spacing: 0.02em;
+    }
+
+    .credibility-note {
+      color: var(--muted);
+      font-size: 0.95rem;
+      text-align: right;
+      max-width: 40ch;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 34px;
+      align-items: start;
+    }
+
+    .lead {
+      font-size: 1.16rem;
+      max-width: 58ch;
+      margin-bottom: 28px;
+    }
+
+    .cta-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 18px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 22px;
+      border-radius: 10px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: #fff;
+      box-shadow: 0 10px 20px rgba(11, 28, 44, 0.18);
+    }
+
+    .btn-secondary {
+      border: 1px solid var(--border);
+      color: var(--primary);
+      background: #fff;
+    }
+
+    .hero-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-card h3 {
+      font-size: 1.15rem;
+      margin-bottom: 12px;
+    }
+
+    .hero-list {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--muted);
+    }
+
+    .hero-list li {
+      margin-bottom: 10px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    .card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+    }
+
+    .problem-card {
+      border-left: 4px solid #ff8a80;
+    }
+
+    .insight {
+      background: var(--bg-light);
+    }
+
+    .insight-quote {
+      border-left: 5px solid var(--accent);
+      padding: 18px 22px;
+      background: #fff;
+      border-radius: 0 10px 10px 0;
+      box-shadow: var(--shadow);
+      margin-top: 22px;
+      color: var(--primary);
+      font-size: 1.14rem;
+      font-weight: 600;
+    }
+
+    .solution-points,
+    .engagement-steps {
+      list-style: none;
+      margin: 22px 0 0;
+      padding: 0;
+      display: grid;
+      gap: 12px;
+    }
+
+    .solution-points li,
+    .engagement-steps li {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px 16px;
+    }
+
+    .capability-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 26px;
+    }
+
+    .capability {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      background: #fff;
+    }
+
+    .capability h3 {
+      margin-bottom: 8px;
+      font-size: 1.1rem;
+    }
+
+    .outcome {
+      display: inline-block;
+      margin-top: 8px;
+      color: #0d5f57;
+      background: rgba(46, 196, 182, 0.15);
+      border-radius: 6px;
+      padding: 5px 8px;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .proof {
+      background: #fff;
+    }
+
+    .proof-grid {
+      margin-top: 20px;
+      display: grid;
+      gap: 14px;
+    }
+
+    .proof-item {
+      background: var(--bg-light);
+      border-radius: 10px;
+      padding: 16px;
+      border: 1px solid #e6edf1;
+    }
+
+    .engagement {
+      background: var(--bg-light);
+    }
+
+    .step-title {
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 4px;
+    }
+
+    .cta-close {
+      background: var(--primary);
+      color: #e8f2f4;
+      border-bottom: none;
+    }
+
+    .cta-close h2,
+    .cta-close p {
+      color: #e8f2f4;
+    }
+
+    .cta-panel {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .cta-box {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: var(--radius);
+      padding: 20px;
+    }
+
+    .cta-box p {
+      color: #dbe6eb;
+      margin-bottom: 10px;
+    }
+
+    .btn-accent {
+      background: var(--accent);
+      color: #05231f;
+      box-shadow: 0 10px 20px rgba(46, 196, 182, 0.25);
+    }
+
+    .small {
+      font-size: 0.9rem;
+      color: #a7bcc8;
+      margin-top: 12px;
+    }
+
+    @media (max-width: 900px) {
+      section {
+        padding: 64px 0;
+      }
+
+      .hero-grid,
+      .grid-2,
+      .capability-grid,
+      .cta-panel {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-top {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .credibility-note {
+        text-align: left;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="hero">
+    <div class="container">
+      <div class="hero-top">
+        <div class="logo">{{LOGO_HERE}}</div>
+        <p class="credibility-note">Mallow Technologies is an engineering-led custom software partner for mission-critical products where uptime, speed, and architecture quality directly impact operations.</p>
+      </div>
+
+      <div class="hero-grid">
+        <div>
+          <span class="eyebrow">Built for senior care operators scaling fast</span>
+          <h1>Your senior care platform is probably slowing your operations more than your staff is.</h1>
+          <p class="lead">When scheduling, family updates, resident records, and care coordination sit on fragile workflows, every added facility increases friction. Mallow helps you fix the underlying system design so your platform can scale without operational drag.</p>
+          <div class="cta-row">
+            <a href="#consultation" class="btn btn-primary">Schedule a Consultation</a>
+            <a href="#engagement" class="btn btn-secondary">See How We Work</a>
+          </div>
+          <p class="small">Best fit: operators managing multi-facility growth, platform owners handling high staff and resident throughput, and teams hitting performance ceilings.</p>
+        </div>
+
+        <aside class="hero-card">
+          <h3>What operators tell us before they call</h3>
+          <ul class="hero-list">
+            <li>"Our teams are working around the software instead of through it."</li>
+            <li>"Adding facilities creates more exceptions, not leverage."</li>
+            <li>"The platform works in demos, but struggles in real operations."</li>
+            <li>"We can’t keep adding features on top of unstable foundations."</li>
+          </ul>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="problems">
+    <div class="container">
+      <h2>Senior care software breaks in predictable places.</h2>
+      <p>The challenges are rarely cosmetic. They sit inside workflows, data flow, and system responsiveness — and your teams pay the cost every shift.</p>
+      <div class="grid-2">
+        <div class="card problem-card">
+          <h3>Inefficient workflows</h3>
+          <p>Staff repeat data entry across disconnected tools, managers spend time reconciling records, and routine tasks become bottlenecks during peak hours.</p>
+        </div>
+        <div class="card problem-card">
+          <h3>Manual coordination overload</h3>
+          <p>Communication between caregivers, administrators, families, and external providers depends on manual follow-ups, creating delays and missed context.</p>
+        </div>
+        <div class="card problem-card">
+          <h3>Poor platform performance</h3>
+          <p>Slow dashboards, delayed notifications, and timeouts during shift changes reduce confidence in the system and push teams back to offline workarounds.</p>
+        </div>
+        <div class="card problem-card">
+          <h3>Scaling pain with every new facility</h3>
+          <p>What worked for one location fails across many. Tenant complexity, role variance, and data volume expose architectural limits quickly.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="insight">
+    <div class="container">
+      <h2>The hidden issue: most senior care platforms don’t fail from missing features.</h2>
+      <p>They fail because core system design cannot support real operational load. Teams keep shipping interface improvements while unresolved data and performance constraints keep compounding underneath.</p>
+      <div class="insight-quote">If your platform slows down as your occupancy and facility count rise, the problem is architectural — not motivational.</div>
+    </div>
+  </section>
+
+  <section class="solution">
+    <div class="container">
+      <h2>Mallow Technologies is an engineering-first partner for high-stakes platforms.</h2>
+      <p>We work with senior care operators and platform teams who need robust software systems — not another feature sprint disconnected from real operating pressure.</p>
+      <ul class="solution-points">
+        <li><strong>System design first:</strong> We diagnose where architecture, data flow, and service boundaries are creating operational friction.</li>
+        <li><strong>Performance as a product requirement:</strong> We treat response time, reliability, and concurrency as business-critical constraints.</li>
+        <li><strong>Scalability with operational realism:</strong> We design for multi-facility variation, role complexity, and growth without brittle rework.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="capabilities">
+    <div class="container">
+      <h2>Capabilities aligned to senior care platform outcomes</h2>
+      <div class="capability-grid">
+        <article class="capability">
+          <h3>Platform modernization</h3>
+          <p>Refactor or re-architect legacy modules, fragile integrations, and outdated infrastructure that hold back reliability and change velocity.</p>
+          <span class="outcome">Outcome: Lower operational risk and faster releases</span>
+        </article>
+        <article class="capability">
+          <h3>Workflow automation</h3>
+          <p>Convert manual handoffs across staffing, resident care, and family communication into auditable, automated workflows with clear ownership.</p>
+          <span class="outcome">Outcome: Reduced coordination overhead per facility</span>
+        </article>
+        <article class="capability">
+          <h3>Performance optimization</h3>
+          <p>Resolve latency hotspots, queue failures, and inefficient data access patterns that degrade user trust during high-activity windows.</p>
+          <span class="outcome">Outcome: Faster critical actions during live operations</span>
+        </article>
+        <article class="capability">
+          <h3>Custom feature development</h3>
+          <p>Build high-impact features only after validating architecture fit, so new functionality adds leverage instead of technical debt.</p>
+          <span class="outcome">Outcome: Features that scale with your growth plan</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="proof">
+    <div class="container">
+      <h2>Why technical leaders choose Mallow</h2>
+      <div class="proof-grid">
+        <div class="proof-item"><strong>Complex platform experience:</strong> We are used to systems where performance, integration stability, and reliability are non-negotiable.</div>
+        <div class="proof-item"><strong>Engineering depth:</strong> Our teams focus on architecture quality, maintainability, and production behavior — not just delivery speed.</div>
+        <div class="proof-item"><strong>Long-term partnership model:</strong> We support roadmap evolution over time so your platform can adapt without repeated rebuild cycles.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="engagement" id="engagement">
+    <div class="container">
+      <h2>Engagement model: Consultation → Audit → Execution</h2>
+      <p>Clear process. No bloated discovery cycle. No vague implementation scope.</p>
+      <ol class="engagement-steps">
+        <li>
+          <div class="step-title">1) Consultation</div>
+          <p>We review your operational bottlenecks, platform goals, and where scaling pressure is showing up today.</p>
+        </li>
+        <li>
+          <div class="step-title">2) Technical Audit</div>
+          <p>We assess architecture, performance constraints, and workflow design, then map the highest-leverage interventions.</p>
+        </li>
+        <li>
+          <div class="step-title">3) Execution</div>
+          <p>We implement prioritized improvements with your team, focused on resilience, speed, and measurable operational impact.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="cta-close" id="consultation">
+    <div class="container cta-panel">
+      <div>
+        <h2>If your platform is creating daily workarounds, growth will only magnify the problem.</h2>
+        <p>You can keep patching symptoms, or fix the engineering foundation before operational friction becomes systemic.</p>
+        <a href="#" class="btn btn-accent">Schedule a Consultation</a>
+        <p class="small">Serious conversations for operators who are ready to improve performance, reliability, and scale-readiness.</p>
+      </div>
+      <div class="cta-box">
+        <p><strong>Bring to the call:</strong></p>
+        <p>• Your top 2 operational bottlenecks</p>
+        <p>• Where platform performance breaks under load</p>
+        <p>• Upcoming growth targets (facilities, users, workflows)</p>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
